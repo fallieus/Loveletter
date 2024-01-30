@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surat Cinta</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #ffdbcc; /* Warna latar belakang untuk suasana yang hangat */
+      overflow: hidden; /* Hide overflow to prevent scrollbars */
+    }
+
+    .outer-envelope {
+      position: relative;
+      animation: outerEnvelopeAnimation 5s infinite alternate; /* Outer envelope animation */
+    }
+
+    .envelope {
+      position: relative;
+      width: 400px;
+      height: 250px;
+      background-color: #ffd6cc; /* Warna dasar amplop */
+      border: 4px solid #ff6666; /* Warna pinggiran amplop */
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 102, 102, 0.3);
+      overflow: hidden;
+      cursor: pointer; /* Add pointer cursor to indicate it's clickable */
+      transition: transform 0.5s; /* Add transition for smooth opening effect */
+    }
+
+    .envelope.open {
+      transform: rotateX(180deg); /* Rotate the envelope to open it */
+    }
+
+    .flap {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 30px 20px 0;
+      border-color: #ffd6cc transparent transparent transparent;
+      background-color: #ffd6cc; /* Sesuaikan warna dengan dasar amplop */
+      z-index: 1;
+      animation: flapAnimation 3s infinite alternate;
+    }
+
+    @keyframes flapAnimation {
+      0% {
+        transform: translateX(-50%) rotate(-10deg);
+      }
+      100% {
+        transform: translateX(-50%) rotate(10deg);
+      }
+    }
+
+    .letter {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+      max-height: 200px; /* Set the maximum height for scrolling */
+      overflow-y: auto; /* Add a vertical scrollbar when content exceeds the max height */
+      font-family: 'Cursive', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #4d4d4d; /* Warna teks */
+      background-color: #fff; /* Warna latar belakang surat */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(77, 77, 77, 0.2); /* Efek bayangan */
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      color: #ff6666; /* Warna judul */
+    }
+  </style>
+</head>
+<body>
+  <div class="outer-envelope">
+    <div class="envelope" onclick="toggleEnvelope()">
+      <div class="flap"></div>
+      <div class="letter">
+        <h2>Surat Cinta</h2>
+        <p>Dear JAJAHHHH PACARRRRR PARIDDDD TERSAYANGGGGG</p>
+        <p>Hari ini, aku ingin mengungkapkan betapa spesialnya dirimu dalam hidupku.</p>
+        <p>Senyumanmu bagaikan sinar matahari yang menerangi hari-hariku.</p>
+        <p>Setiap detik bersamamu adalah kenangan yang kusimpan dengan penuh cinta.</p>
+        <p>Terima kasih telah menjadi bagian yang tak tergantikan dalam hidupku.</p>
+        <p>AKUUU SAYANG KAMUUU SELALUUUUUUUUUUUUUUU</p>
+        <p>btw AKU KANGENNN KAMUUUUUUU WOIIIIIII</p>
+        <p>perom PARIDD KONTOLLL GEDEEEEE</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleEnvelope() {
+      const envelope = document.querySelector('.envelope');
+      envelope.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
